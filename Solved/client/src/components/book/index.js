@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import API from  "../../utils/API";
+import CSS from "./index.css";
 
 
 
@@ -50,16 +51,35 @@ function Book(props) {
   
   }
   return (
-   <div>
-     <div>
-  <h3>{props.title}</h3>
-  <strong>{props.author}</strong>
-  </div>
-  <img src= {props.image}></img>
-  {button}
-   <p>{props.description}</p>
+
+   
+
+
+
+
+
+   <div className="box1 d-flex justify-content-center">
+    
+     <div clasName="d-flex justify-content-center">
   
+  <h4>{props.author}</h4>
+  <img src={props.image} height="300px"width="200px"></img>
+  {button}
+   
    </div>
+   <div>
+   <h3 className="mt-4">{props.title}</h3>
+   <p className="mt-4 ml-4">{props.description}</p>
+   </div>
+   </div>
+
+  
+
+  
+
+  
+   
+   
   );
 }
 

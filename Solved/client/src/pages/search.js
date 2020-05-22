@@ -29,10 +29,17 @@ function Search(props) {
         console.log(res);
         let array = [];
         array = res.data.items.map((book, index)=>{
-            return  <Book title =  {book.volumeInfo.title} author = {book.volumeInfo.authors}
-             description = {book.volumeInfo.description} image = {book.volumeInfo.imageLinks.thumbnail} saveBTN="true" key={index}/>
-        
-        })
+          if(book.volumeInfo.imageLinks){
+            return (
+            <Book title =  {book.volumeInfo.title} author = {book.volumeInfo.authors}
+           description = {book.volumeInfo.description} image = {book.volumeInfo.imageLinks.thumbnail} saveBTN="true" key={index}/>
+            )
+          }
+          else return  <Book title =  {book.volumeInfo.title} author = {book.volumeInfo.authors}
+           description = {book.volumeInfo.description}  saveBTN="true" key={index}/>
+      
+      });
+       
         setBooks(array)
     })
 
