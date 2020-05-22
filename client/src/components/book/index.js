@@ -37,7 +37,7 @@ function Book(props) {
       {data:{
         id:props.bookid
       }}
-      ).then(()=>{window.location.reload()})
+      ).then((data)=>{props.updateBooks(data)})
   }
 
 
